@@ -25,7 +25,9 @@ alias pago="cd ~/Work/Pago/Backend/pago/"
 alias conf="cd ~/.config/"
 alias tf='sesh connect $(sesh list | fzf)'
 alias gb='git checkout $(git branch -l | fzf)'
-
+alias gt-lsr='git ls-remote --tags --refs origin | awk -F / '\''{print $NF}'\'' | sort -r | fzf --reverse | pbcopy'
+alias gt-ls='git tag --sort=v:refname | sort -r | fzf --reverse | pbcopy'
+alias gt-create='git tag $1 && git push origin $1'
 
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/Users/andreichirita/Library/Android/sdk/platform-tools"
