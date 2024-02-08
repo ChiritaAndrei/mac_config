@@ -1,0 +1,57 @@
+live_config_reload = true
+import = ["~/.config/alacritty/colors/catppucin-mocha.toml"]
+
+[bell]
+animation = "EaseOutExpo"
+duration = 75
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 0
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+decorations = "buttonless"
+dynamic_title = true
+startup_mode = "Maximized"
+
+[window.dimensions]
+columns = 80
+lines = 24
+
+[window.padding]
+x = 20
+y = 20
