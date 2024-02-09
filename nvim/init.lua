@@ -431,7 +431,23 @@ require('which-key').register({
 
 require('mason').setup()
 require('mason-lspconfig').setup()
-
+require("noice").setup({
+  -- Put your specific configurations here
+  -- Example configuration:
+  routes = {
+    { filter = { event = "msg_show", kind = "", find = "written" }, opts = { skip = true } },
+  },
+  lsp = {
+    -- Enables Noice UI for LSP messages
+    enabled = true,
+  },
+  -- You can add more configurations as per your requirement
+})
+require("catppuccin").setup({
+  integrations = {
+    noice = true,
+  }
+})
 local servers = {
   -- clangd = {},
   -- gopls = {},
