@@ -52,6 +52,52 @@ require('lazy').setup({
 			}
 		}
 	},
+	{
+		"mfussenegger/nvim-dap"
+	},
+	{
+		"leoluz/nvim-dap-go",
+		ft = "go",
+		dependencies = "mfussenegger/nvim-dap",
+		config = function(_, opts)
+			require("dap-go").setup(opts)
+		end
+	},
+	{
+
+		"olexsmir/gopher.nvim",
+		ft = "go",
+		config = function(_, opts)
+			require("gopher").setup(opts)
+		end,
+		build = function()
+			vim.cmd [[silent! GoInstallDeps]]
+		end,
+	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+		},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		}
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		ft = "go",
+		dependencies = {
+			"mfussenegger/nvim-dap"
+		},
+		config = function(_, opts)
+			print("dapui setup call")
+			require("dapui").setup(opts)
+		end
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+	},
 }, {})
 
 
@@ -61,8 +107,12 @@ require('neodev').setup()
 
 -- Plugins configs
 
+require("custom/plugins_config/catppuccin")
+require("custom/plugins_config/treesitter")
 require("custom/plugins_config/lualine")
 require("custom/plugins_config/telescope")
 require("custom/plugins_config/lsp")
 require("custom/plugins_config/cmp")
 require("custom/plugins_config/whichkey")
+require("custom/plugins_config/noice")
+require("custom/plugins_config/dapui")
