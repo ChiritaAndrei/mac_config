@@ -1,4 +1,10 @@
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+
+	if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_buf_set_option(bufnr, 'tabstop', 4)
+		vim.api.nvim_buf_set_option(bufnr, 'shiftwidth', 4)
+	end
+
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = 'LSP: ' .. desc

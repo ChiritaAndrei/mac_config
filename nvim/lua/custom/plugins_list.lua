@@ -98,6 +98,12 @@ require('lazy').setup({
 	{
 		"theHamsta/nvim-dap-virtual-text",
 	},
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+		},
+	},
 }, {})
 
 

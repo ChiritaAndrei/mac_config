@@ -41,3 +41,10 @@ vim.keymap.set("n", "<leader>dsi", ":DapStepInto<CR>", { noremap = true, desc = 
 vim.keymap.set("n", "<leader>dso", ":DapStepOver<CR>", { noremap = true, desc = 'Debugger step over' })
 vim.keymap.set("n", "<leader>dsx", ":DapStepOut<CR>", { noremap = true, desc = 'Debugger step out' })
 vim.keymap.set("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", { noremap = true, desc = 'Debugger reset ui' })
+
+vim.keymap.set("n", "<leader>tt", function() require("trouble").toggle() end)
+vim.keymap.set("n", "<leader>tw", function() require("trouble").toggle("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("document_diagnostics") end)
+vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("quickfix") end)
+vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end)
+vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)

@@ -12,6 +12,7 @@ require("catppuccin").setup({
 		nvimtree = true,
 		treesitter = true,
 		notify = false,
+		lsp_trouble = true,
 		mini = {
 			enabled = true,
 			indentscope_color = "",
