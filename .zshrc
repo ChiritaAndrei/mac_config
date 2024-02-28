@@ -21,6 +21,7 @@ if [ -x "$(command -v colorls)" ]; then
     alias la="colorls -al"
 fi
 alias t="tmux"
+alias ta="tmux attach"
 alias pago="cd ~/Work/Pago/Backend/pago/"
 alias conf="cd ~/.config/"
 alias tf='sesh connect $(sesh list | fzf)'
