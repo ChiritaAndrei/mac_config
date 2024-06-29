@@ -1,3 +1,2 @@
-require "custom.config"
-require "custom.plugin"
-require "custom.keymaps"
+require("chiri.core")
+require("chiri.lazy")
