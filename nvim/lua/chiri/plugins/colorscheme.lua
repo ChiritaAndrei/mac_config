@@ -14,6 +14,13 @@ return {
 				shade = "dark",
 				percentage = 0.15, -- percentage of the shade to apply to the inactive window
 			},
+			integrations = {
+				cmp = true,
+				gitsigns = true,
+				nvimtree = true,
+				treesitter = true,
+				noice = true,
+			},
 		})
 
 		vim.cmd("colorscheme catppuccin")
