@@ -3,10 +3,16 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+export ZSH_TMUX_AUTOSTART="true"
+export ZSH_TMUX_DEFAULT_SESSIONPNAME="HOME"
+export ZSH_TMUX_AUTONAME_SESSION="true"
+export ZSH_TMUX_DETACHED="true"
+export ZSH_TMUX_AUTOCONNECT="true"
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download Zinit, if it's not there yet
+# Download Zinit, if it's not there yet/Users/andreichirita/.local/share/zinit/snippets/OMZP::tmux/tmux.extra.conf: No such file or directory
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -23,8 +29,9 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-
+zinit snippet OMZP::tmux
 # Add in snippets
+
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
@@ -67,10 +74,10 @@ if [ -x "$(command -v colorls)" ]; then
     alias ls="colorls"
     alias la="colorls -al"
 fi
-alias t="tmux"
-alias ta="tmux attach"
-alias tls="tmux list-sessions | fzf --reverse | pbcopy"
-alias tf='sesh connect $(sesh list | fzf)'
+# alias t="tmux"
+# alias ta="tmux attach"
+# alias tls="tmux list-sessions | fzf --reverse | pbcopy"
+# alias tf='sesh connect $(sesh list | fzf)'
 alias vim='nvim'
 
 alias gb='git checkout $(git branch -l | fzf)'
@@ -86,6 +93,7 @@ export PATH="$PATH:/Users/andreichirita/Library/Android/sdk/emulator"
 export PATH="$PATH:/Users/andreichirita/Library/Python/3.8/bin"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export TEMP="/Users/andreichirita/TEMP"
+
 
 export FZF_TMUX_OPTS="-p"
 export FZF_CTRL_R_OPTS="--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
@@ -106,3 +114,5 @@ export NVM_DIR="$HOME/.nvm"
 # Shell integrations
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
