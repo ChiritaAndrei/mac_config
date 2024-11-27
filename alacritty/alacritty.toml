@@ -1,7 +1,5 @@
-live_config_reload = true
-import = ["~/.config/alacritty/colors/catppucin-mocha.toml"]
 [env]
-TERM = "xterm-256color"
+TERM = "tmux-256color"
 
 [bell]
 animation = "EaseOutExpo"
@@ -57,3 +55,7 @@ lines = 24
 [window.padding]
 x = 20
 y = 20
+
+[general]
+live_config_reload = true
+import = ["~/.config/alacritty/colors/catppucin-mocha.toml"]

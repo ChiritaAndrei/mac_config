@@ -6,21 +6,18 @@ return {
 		vim.o.timeoutlen = 500
 	end,
 	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
+		spec = {
+			-- Add keybindings as part of the config using the new format
+			{ "<leader>c", group = "[C]ode" },
+			{ "<leader>e", group = "[E]xplorer" },
+			{ "<leader>f", group = "[F]ind" },
+			{ "<leader>h", group = "[H]unks git" },
+			{ "<leader>r", group = "[R]efactor" },
+			{ "<leader>s", group = "[S]creen" },
+			{ "<leader>t", group = "[T]abs" },
+			{ "<leader>x", group = "[X]troubles" },
+			-- You can also add actual keymaps here
+			-- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
+		},
 	},
-	config = function()
-		local wk = require("which-key")
-		wk.register({
-			["<leader>c"] = { name = "[C]ode" },
-			["<leader>e"] = { name = "[E]xplorer" },
-			["<leader>f"] = { name = "[F]ind" },
-			["<leader>h"] = { name = "[H]unks git" },
-			["<leader>r"] = { name = "[R]efactor" },
-			["<leader>s"] = { name = "[S]creen" },
-			["<leader>t"] = { name = "[T]abs" },
-			["<leader>x"] = { name = "[X]troubles" },
-		})
-	end,
 }
